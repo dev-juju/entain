@@ -1,7 +1,14 @@
-import { Test, TestingModule } from '@nestjs/testing';
+/**
+ * @packageDocumentation
+ * @category Test
+ */
+
+//#region imports
 import { INestApplication } from '@nestjs/common';
+import { Test, TestingModule } from '@nestjs/testing';
+import { AppModule } from 'Entain/app.module';
 import * as request from 'supertest';
-import { AppModule } from './../src/app.module';
+//#endregion
 
 describe('AppController (e2e)', () => {
   let app: INestApplication;

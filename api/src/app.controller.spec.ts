@@ -1,6 +1,13 @@
+/**
+ * @packageDocumentation
+ * @category Test
+ */
+
+//#region imports
 import { Test, TestingModule } from '@nestjs/testing';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
+import { AppController } from 'Entain/app.controller';
+import { AppService } from 'Entain/app.service';
+//#endregion
 
 describe('AppController', () => {
   let appController: AppController;
@@ -15,8 +22,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Data server is active!"', () => {
+      expect(appController.status()).toBe('Data server is active!');
     });
   });
 });

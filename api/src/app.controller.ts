@@ -1,12 +1,25 @@
+/**
+ * @packageDocumentation
+ * @category Controller
+ */
+
+//#region imports
 import { Controller, Get } from '@nestjs/common';
-import { AppService } from './app.service';
+import { AppService } from 'Entain/app.service';
+import { getSwaggerJsonString } from 'Entain/config/swagger';
+//#endregion
 
 @Controller()
 export class AppController {
-  constructor(private readonly appService: AppService) {}
+  constructor(private readonly appService: AppService) { }
 
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
+  @Get('/')
+  status(): string {
+    return this.appService.status();
+  }
+
+  @Get('/swagger-config')
+  getSwaggerConfig(): string {
+    return getSwaggerJsonString();
   }
 }

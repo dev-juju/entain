@@ -12,6 +12,15 @@ restart: # restart all
 gen_docs: # generates technical documentation from code for all modules
 	cd api && pnpm gen:docs
 	cd web && pnpm gen:docs
+lint: # run lint for all modules
+	cd api && pnpm lint
+	cd web && pnpm lint
+lint_fix: # fix lint errors for all modules. Not all lint errors can be fixed automatically, you will need to manually fix some problems
+	cd api && pnpm lint:fix
+	cd web && pnpm lint:fixs
+test_unit: # run unit tests for all modules
+	pnpm -C api run test:unit
+	pnpm -C web run test:unit
 
 # API:
 # These are commands specific to the API module
