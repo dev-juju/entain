@@ -23,6 +23,7 @@ module.exports = {
     'Test',
     'Stub',
     'Mock',
+    'Filter',
     '*',
   ],
   entryPointStrategy: 'expand',
