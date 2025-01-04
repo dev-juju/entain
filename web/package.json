@@ -1,7 +1,25 @@
 {
   "name": "entain-web",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Sports betting and gaming platform",
+  "keywords": [
+    "Sports betting",
+    "Online gaming"
+  ],
+  "license": "UNLICENSED",
+  "homepage": "https://www.entaingroup.com//",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-juju/entain/tree/main/web"
+  },
+  "packageManager": "pnpm@9.15.2",
+  "engines": {
+    "node": "22",
+    "pnpm": "9.*",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

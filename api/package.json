@@ -1,10 +1,26 @@
 {
   "name": "entain-api",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "1.0.0",
   "private": true,
+  "description": "API service for Entain",
+  "keywords": [
+    "Sports betting",
+    "Online gaming"
+  ],
   "license": "UNLICENSED",
+  "main": "src/index.js",
+  "homepage": "https://www.entaingroup.com//",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev-juju/entain/tree/main/api"
+  },
+  "packageManager": "pnpm@9.15.2",
+  "engines": {
+    "node": "22",
+    "pnpm": "9.*",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  },
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
@@ -65,6 +81,5 @@
     ],
     "coverageDirectory": "../coverage",
     "testEnvironment": "node"
-  },
-  "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
+  }
 }
