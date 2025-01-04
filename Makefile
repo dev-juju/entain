@@ -9,6 +9,9 @@ down: # stop all modules started with `up` command
 	docker compose down
 restart: # restart all
 	make down && make up
+gen_docs: # generates technical documentation from code for all modules
+	cd api && pnpm gen:docs
+	cd web && pnpm gen:docs
 
 # API:
 # These are commands specific to the API module

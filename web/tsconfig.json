@@ -1,16 +1,19 @@
 {
+  "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
-    "target": "ES2017",
+    "target": "ESNext",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
+    "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
-    "moduleResolution": "bundler",
+    "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    "downlevelIteration": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [
@@ -18,10 +21,30 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "EntainWeb/*": ["./src/*"]
-    }
+      "Entain/*": ["./src/*"]
+    },
+    "outDir": "compiled",
+    "strictNullChecks": true,
+    "pretty": true,
+    "composite": false,
+    "declaration": true,
+    "declarationMap": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", ".storybook/**/*"],
+  "exclude": [
+    "node_modules",
+    ".next",
+    "coverage",
+    "compiled",
+    "dist",
+    "build-next-static",
+    "build-storybook-static"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
