@@ -14,6 +14,12 @@ restart: # restart all
 # These are commands specific to the API module
 api_install: # install packages
 	cd api && pnpm install
+api_resource: # create a new resource
+	cd api && pnpm create:resource resources/$(name)
+api_controller: # create a new controller
+	cd api && pnpm create:controller resources/$(name)
+api_service: # create a new service
+	cd api && pnpm create:service resources/$(name)
 
 # WEB:
 # These are commands specific to the Web module
