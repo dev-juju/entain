@@ -1,0 +1,17 @@
+services:
+  api:
+    container_name: entain-api__app__development
+    image: node:22.12.0-alpine
+    restart: unless-stopped
+    working_dir: /usr/app/
+    volumes:
+      - .:/usr/app/
+    ports:
+      - '${APP_EXPOSED_PORT:-3002}:3000'
+    command: >
+      sh -c 'corepack enable
+      && corepack prepare pnpm@9.15.2 --activate
+      && pnpm i
+      && pnpm start:dev'
+    env_file:
+      - .env

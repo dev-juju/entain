@@ -1,0 +1,10 @@
+node_modules
+docs
+docker
+Dockerfile
+npm-debug.log
+.gitignore
+.git
+.eslintrc.json
+.pnpm-store
+.next

@@ -1,0 +1,44 @@
+services:
+  api:
+    container_name: entain-api__app__development
+    image: node:22.12.0-alpine
+    restart: unless-stopped
+    working_dir: /usr/app/
+    volumes:
+      - ./api:/usr/app/
+    ports:
+      - '${API_EXPOSED_PORT:-3002}:3000'
+    command: >
+      sh -c 'corepack enable
+      && corepack prepare pnpm@9.15.2 --activate
+      && pnpm i
+      && pnpm start:dev'
+    networks:
+      - entain-shared
+    env_file:
+      - ./api/.env
+  web:
+    container_name: entain-web__app__development
+    image: node:22.12.0-alpine
+    env_file:
+      - ./web/.env
+    restart: unless-stopped
+    working_dir: /usr/app/
+    ports:
+      - '${WEB_EXPOSED_PORT:-3003}:3000'
+    volumes:
+      - ./web:/usr/app/
+      - ./wait-for.sh:/usr/wait-for.sh
+    networks:
+      - entain-shared
+    command: >
+      sh -c '/usr/wait-for.sh http://api:3000 -- corepack enable
+      && corepack prepare pnpm@9.15.2 --activate
+      && pnpm i
+      && pnpm dev'
+    depends_on:
+      api:
+        condition: service_started
+networks:
+  entain-shared:
+    driver: bridge
