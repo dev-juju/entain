@@ -21,6 +21,9 @@ lint_fix: # fix lint errors for all modules. Not all lint errors can be fixed au
 test_unit: # run unit tests for all modules
 	pnpm -C api run test:unit
 	pnpm -C web run test:unit
+build_images: # build production-ready docker images for all module
+	cd api && docker build -t entain-api:$(tag) .
+	cd web && docker build -t entain-web:$(tag) .
 
 # API:
 # These are commands specific to the API module
@@ -37,3 +40,8 @@ api_service: # create a new service
 # These are commands specific to the Web module
 web_install: # install packages
 	cd web && pnpm install
+# These are commands specific to the Web module
+start_storybook:
+	cd web && pnpm storybook
+build_storybook:
+	cd web && pnpm build:storybook

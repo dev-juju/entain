@@ -1,0 +1,173 @@
+{
+	"info": {
+		"_postman_id": "cf31e506-80ae-4135-a38c-5db7143357c4",
+		"name": "Entain",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4046330"
+	},
+	"item": [
+		{
+			"name": "Movie",
+			"item": [
+				{
+					"name": "List",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/list?category=now_playing&page=1&language=en-US",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"list"
+							],
+							"query": [
+								{
+									"key": "category",
+									"value": "now_playing"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "en-US"
+								},
+								{
+									"key": "region",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/search?query=test&page=1&language=en-US&include_adult=true&year=2024",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "test"
+								},
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "language",
+									"value": "en-US"
+								},
+								{
+									"key": "region",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "include_adult",
+									"value": "true"
+								},
+								{
+									"key": "year",
+									"value": "2024"
+								},
+								{
+									"key": "primary_release_year",
+									"value": "2020",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find By ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/movie/558449",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"movie",
+								"558449"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "App",
+			"item": [
+				{
+					"name": "Health Check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								""
+							],
+							"query": [
+								{
+									"key": "region",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Swagger Config",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/swagger-config",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"swagger-config"
+							],
+							"query": [
+								{
+									"key": "region",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
