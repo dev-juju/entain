@@ -1,0 +1,94 @@
+{
+  "git.enableSmartCommit": true,
+  "editor.wordWrap": "on",
+  "git.confirmSync": false,
+  "extensions.ignoreRecommendations": false,
+  "terminal.integrated.rightClickBehavior": "selectWord",
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  "javascript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingNonemptyBrackets": false,
+  "typescript.format.insertSpaceAfterOpeningAndBeforeClosingTemplateStringBraces": true,
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.scrollBeyondLastLine": false,
+  "editor.wrappingIndent": "indent",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "breadcrumbs.enabled": true,
+  "git.autofetch": true,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "files.trimTrailingWhitespace": true,
+  "css.lint.float": "error",
+  "css.lint.importStatement": "warning",
+  "css.lint.universalSelector": "warning",
+  "css.lint.unknownVendorSpecificProperties": "warning",
+  "css.lint.zeroUnits": "warning",
+  "editor.detectIndentation": false,
+  "workbench.iconTheme": "vscode-great-icons",
+  "cSpell.words": [
+    "autofocus",
+    "discoverability",
+    "endregion",
+    "Entain",
+    "relocator",
+    "unfocus",
+    "url",
+    "vsintellicode",
+    "Zustand"
+  ],
+  "diffEditor.ignoreTrimWhitespace": true,
+  "github.gitProtocol": "ssh",
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "console-ninja.outputMode": "In View",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.typegen.ts",
+    "*.tsx": "${capture}.typegen.ts",
+    "*.mts": "${capture}.typegen.ts",
+    "*.cts": "${capture}.typegen.ts"
+  },
+  "editor.language.colorizedBracketPairs": [],
+  "todo-tree.highlights.enabled": false,
+  "[properties]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dotenv]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "auto-rename-tag.activationOnLanguage": ["*"],
+  "[shellscript]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "eslint.format.enable": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.next": false,
+    ".next": false
+  },
+  "explorerExclude.backup": {}
+}

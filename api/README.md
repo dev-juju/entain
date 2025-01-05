@@ -1,99 +1,76 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+# [Entain - API](https://github.com/dev-juju/entain/tree/main/api)
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Sports betting and gaming platform
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Development
+### Run
+The app can be started either directly with Node or in a Docker container.
+Make sure you have created the necessary environment files before proceeding.
+See the repository-level [README.md](https://github.com/dev-juju/entain/blob/main/README.md) file for setup details
 
-## Description
+#### Using Node
+```shell
+# install dependencies
+pnpm i
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
-
-## Project setup
-
-```bash
-$ pnpm install
+# run app in dev mode with HMR
+pnpm start:dev
 ```
 
-## Compile and run the project
-
-```bash
-# development
-$ pnpm run start
-
-# watch mode
-$ pnpm run start:dev
-
-# production mode
-$ pnpm run start:prod
+#### Using Docker
+```shell
+# NB: initial run might take some time to pull required docker images
+docker compose up
 ```
 
-## Run tests
+### Test
+#### Manual tests
+REST endpoints can be tested either via `Postman` or `Swagger UI` served locally at http://localhost:3002/rest. Postman collections are included in the `postman` directory and can be imported into the desktop app.
 
-```bash
-# unit tests
-$ pnpm run test
-
-# e2e tests
-$ pnpm run test:e2e
-
-# test coverage
-$ pnpm run test:cov
+#### Unit tests
+```shell
+# run unit tests
+pnpm test:unit
 ```
 
 ## Deployment
+We can build and deploy the service as a Docker image
 
-When you're ready to deploy your NestJS application to production, there are some key steps you can take to ensure it runs as efficiently as possible. Check out the [deployment documentation](https://docs.nestjs.com/deployment) for more information.
+```shell
+# build image
+docker build -t <image_name_and_tag> .
 
-If you are looking for a cloud-based platform to deploy your NestJS application, check out [Mau](https://mau.nestjs.com), our official platform for deploying NestJS applications on AWS. Mau makes deployment straightforward and fast, requiring just a few simple steps:
+# build image to registry
+docker push <image_name_and_tag>
 
-```bash
-$ pnpm install -g mau
-$ mau deploy
+# NB: replace <image_name_and_tag> with actual name and tag. For example, to build and deploy to my docker hub registry, this would be bomdi2/entain_api:latest
 ```
 
-With Mau, you can deploy your application in just a few clicks, allowing you to focus on building features rather than managing infrastructure.
+## Documentation
+Code documentation is generated with [TypeDoc](https://typedoc.org/).
+See [here](https://typedoc.org/example/modules.html) for examples and conventions.
 
-## Resources
+Generated docs are stored in the `docs` directory at the root.
+In this directory is included an `index.html` file - open this file in a browser to access the generated documentation locally.
+The generated docs are static assets that can be hosted on any platform for remote access.
+Ideally our deployment pipeline should include a document generation step that builds and deploys these assets, and potentially fails the deployment if there are documentation errors.
 
-Check out a few resources that may come in handy when working with NestJS:
+```shell
+# generate/update docs
+pnpm gen:docs
+```
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+## Notes
+### Folders structure
+We want to have isolated, loosely-coupled, re-useable and testable components that can be moved around and/or replaced without any (or minimal) side-effects.
+We also want a codebase with high discoverability.
+Some of the structures and recommendations below are based on this goal.
 
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+  - `dist` contains the build artifacts. This directory is not version controlled and should not be manually created or modified.
+  - `docs` contains the Typedoc generated [documentation](#Documentation). This directory should not be manually created or modified.
+  - `node_modules` contains all third-party NPM packages. This directory is not version controlled and should not be manually created or modified.
+  - `test` contains end to end tests. Note that unit tests are co-located with code being tested - test files end in `.spec.ts`
+  - `src` contains all source code. Think of every subdirectory as a resource. Each resource can contain a module, controller (for REST), resolver (for GraphQL), service, entities, data transfer objects (dto), tests etc.
+    - `common` contains shared utilities, types, constants, hooks, etc.
+    - `config` contains configuration files for CORS, error handling, etc.
+    - `resources` contains all resources. Each resource can contain a module, controller (for REST), resolver (for GraphQL), service, entities, data transfer objects (dto), tests etc.
