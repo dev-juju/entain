@@ -106,14 +106,10 @@ pnpm build:storybook
 With Cypress we allow developers to take responsibility of testing the components they create/modify while allowing QAs to focus on the bigger picture (regression, stress/load, end-to-end, integrations etc).
 This significantly improves test coverage over time and guarantees an overall more stable application. See the [Test]{#Test} section above for more information.
 
-### Zustand
-Here's is a perfect summary of what [Zustand](https://docs.pmnd.rs/zustand/getting-started/introduction) is from the official documentation.
-
->A small, fast, and scalable bare-bones state management solution. Zustand has a comfy API based on hooks. It isn't `boilerplatey` or opinionated, but has enough convention to be explicit and flux-like.
->Don't disregard it because it's cute, it has claws! Lots of time was spent to deal with common pitfalls, like the dreaded [zombie child problem](https://react-redux.js.org/api/hooks#stale-props-and-zombie-children), [React concurrency](https://github.com/bvaughn/rfcs/blob/useMutableSource/text/0000-use-mutable-source.md), and [context loss](https://github.com/facebook/react/issues/13332) between mixed renderers. It may be the one state manager in the React space that gets all of these right.
-
-Amongst many benefits it also allows async operations inside reducers out of the box.
-See [this page](https://docs.pmnd.rs/zustand/getting-started/comparison) for a comparison with alternatives like `Redux`, `Valtio`, `Jotai` and `Recoil`
+### XState
+[XState](https://stately.ai/docs/xstate-introduction) is a state management library for React that allows to manage state in a declarative way.
+It is a powerful tool that allows to create complex `state machines` and to test them in isolation. While it might be overkill for simple state management, I find the safety and structure it provides to be invaluable. The state diagrams are also a great way to visualize the state transitions throughout the application lifecycle.
+See [this page](https://stately.ai/docs/xstate-introduction) for more information on XState.
 
 ### MUI
 Every company needs a component library. Generally, we can either build this from scratch (which can be quite tedious and challenging) or use a third-party library as a starting point.

@@ -1,0 +1,22 @@
+{
+  "name": "Entain",
+  "short_name": "Entain",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#318FCE",
+  "theme_color": "#318FCE",
+  "description": "Sports betting and gaming platform",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
