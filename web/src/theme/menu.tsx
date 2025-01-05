@@ -7,7 +7,7 @@
 
 //#region imports
 import { WbSunnyRounded } from '@mui/icons-material';
-import { Menu, MenuItem } from '@mui/material';
+import { Menu, MenuItem, TooltipProps } from '@mui/material';
 import { UIMachineActorContext } from 'Entain/app/state';
 import { ExpandableMenuButton } from 'Entain/components/expandable-menu-button';
 import { themeVariants } from 'Entain/theme/variants';
@@ -18,7 +18,7 @@ import { MouseEvent, useState } from 'react';
 
 export type ThemeMenuProps = {
   expanded?: boolean
-  placement?: TooltipPlacement
+  placement?: TooltipProps['placement']
   onSelect?: () => void
 };
 

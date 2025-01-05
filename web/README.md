@@ -133,8 +133,8 @@ Some of the structures and recommendations below are based on this goal.
   - `public` contains all static assets (images, fonts, PWA manifest, static styles/scripts etc) that should be made available to the browser. This is the place where Next.js looks for static assets when requested by a client.
   - `src` contains all source code in the following sub-directories
     - `@types` contains all global types. **Types that are only used by one component should generally not be placed here, but should be defined in the component**. All types should be exported to make them available to [TypeDoc](#Documentation).
-    - `components` contains all re-usable components.
     - `app` contains all routes (pages). See [NEXT.js](#NEXT.js) section for more on page routing.
+    - `components` contains all re-usable components.
     - `theme` contains theming configurations, variants, theme provider, UI theme picker etc. Themes are defined using [Material UI](#MUI).
     - `translations` contains translation configurations, supported languages, UI language picker etc. **Actual translation files should be co-located with the corresponding component.**
     - `util` contains shared utility functions, hooks and global constants. Functions and hooks are defined in separate files (when possible) and as close to the consuming component(s) as possible. Only those that a truly global (or do not belong to any specific component/page) are placed here.

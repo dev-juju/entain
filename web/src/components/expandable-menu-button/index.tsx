@@ -4,7 +4,7 @@
  */
 
 //#region imports
-import { Badge, Box, Tooltip, Typography } from '@mui/material';
+import { Box, Tooltip, TooltipProps, Typography } from '@mui/material';
 import { style } from 'Entain/components/expandable-menu-button/style';
 import { dummy } from 'Entain/utils/functions';
 import { MouseEvent, ReactNode } from 'react';
@@ -14,27 +14,18 @@ export type ExpandableMenuButtonProps = {
   text?: string
   onClick?: (event: MouseEvent<HTMLElement>) => void
   icon: ReactNode
-  badgeContent?: ReactNode
-  badgeColor?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning'
   tooltip?: string
   expanded?: boolean
   isActive?: boolean
-  placement?: TooltipPlacement
+  placement?: TooltipProps['placement']
 };
 
-export const ExpandableMenuButton = ({
-  text, tooltip, icon, expanded, placement='top', onClick=dummy, badgeContent='', badgeColor='default', isActive
-}: ExpandableMenuButtonProps) => {
+export const ExpandableMenuButton = ({ text, tooltip, icon, expanded, isActive, placement='top', onClick=dummy }: ExpandableMenuButtonProps) => {
   const isLongText = text && text.length > 15;
-  const iconComponent = badgeContent ?
-    <Badge color={ badgeColor } badgeContent={ badgeContent } max={ 9999 }>{ icon }</Badge>
-    :
-    icon;
-
   const menuButton = (
     <Box sx={ style.container } onClick={ onClick }>
       <Box sx={ { ...style.button, justifyContent: text && expanded ? 'flex-start' : 'center', ...(isActive ? style.activeButton : {}) } }>
-        { iconComponent }
+        { icon }
         {
           text ?
             <Typography variant='body1' sx={ { ...style.text, ...(expanded ? style.openText : {}) } } noWrap>{ text }</Typography>

@@ -6,6 +6,7 @@
 //#region React
 import { themeVariants } from 'Entain/theme/variants';
 import { SupportedLanguageEnum } from 'Entain/translations/utils';
+import { ReactNode } from 'react';
 //#endregion
 
 /**-------------------------------------------------------------------------------------------------------------------------
@@ -24,8 +25,6 @@ declare global {
   type Translation = {
     [key in LanguageKey]: string;
   };
-
-  type TooltipPlacement = 'top' | 'bottom' | 'right' | 'left' | 'top-start' | 'top-end' | 'bottom-start' | 'bottom-end' | 'right-start' | 'right-end' | 'left-start' | 'left-end';
 
   type Movie = {
     id: number
@@ -78,6 +77,18 @@ declare global {
       maximum: string
       minimum: string
     }
+  }
+
+  type PageLink = {
+    url: string
+    as: string
+  }
+
+  type NavigationMenuItem = {
+    name: string
+    link: PageLink
+    dataCy: string
+    icon: ReactNode
   }
 }
 

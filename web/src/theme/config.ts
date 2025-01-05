@@ -15,20 +15,26 @@ import { themeVariants } from 'Entain/theme/variants';
 declare module '@mui/material/styles' {
   interface Theme {
     colors?: {
-      tooltip: CSSProperties['color'];
       tooltipBackground: CSSProperties['color'];
+      tooltipForeground: CSSProperties['color'];
       hoveredMenu: CSSProperties['color'];
       selectedMenu: CSSProperties['color'];
       selectedHoveredMenu: CSSProperties['color'];
+      navigationBackground: CSSProperties['color'];
+      navigationForeground: CSSProperties['color'];
+      alpha: CSSProperties['color'];
     };
   }
   interface ThemeOptions {
     colors?: {
-      tooltip: CSSProperties['color'];
       tooltipBackground: CSSProperties['color'];
+      tooltipForeground: CSSProperties['color'];
       hoveredMenu: CSSProperties['color'];
       selectedMenu: CSSProperties['color'];
       selectedHoveredMenu: CSSProperties['color'];
+      navigationBackground: CSSProperties['color'];
+      navigationForeground: CSSProperties['color'];
+      alpha: CSSProperties['color'];
     };
   }
 }
@@ -71,7 +77,7 @@ const createThemeWithThemeProps = (theme: Theme) => {
         styleOverrides: {
           tooltip: {
             backgroundColor: theme.colors?.tooltipBackground,
-            color: theme.colors?.tooltip,
+            color: theme.colors?.tooltipForeground,
           },
           arrow: {
             color: theme.colors?.tooltipBackground,

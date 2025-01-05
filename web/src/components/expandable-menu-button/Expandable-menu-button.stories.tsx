@@ -4,7 +4,7 @@
  */
 
 //#region imports
-import { DashboardRounded, GamepadRounded, NotificationsRounded } from '@mui/icons-material';
+import { DashboardRounded, NotificationsRounded } from '@mui/icons-material';
 import { Meta, StoryFn } from '@storybook/react';
 import { ExpandableMenuButton } from 'Entain/components/expandable-menu-button';
 import React from 'react';
@@ -32,12 +32,6 @@ const story: Meta<typeof ExpandableMenuButton> = {
       description: 'Whether the menu is expanded',
       defaultValue: false
     },
-    badgeContent: {
-      name: 'badgeContent',
-      type: { name: 'string', required: false },
-      description: 'Badge content',
-      defaultValue: '10'
-    }
   },
 };
 
@@ -50,8 +44,5 @@ const Template: StoryFn<typeof ExpandableMenuButton> = (args) => <ExpandableMenu
 export const Default: any = Template.bind({});
 Default.args = { icon: <DashboardRounded />, tooltip: 'Dashboard' };
 
-export const WithBadge: any = Default.bind({});
-WithBadge.args = { icon: <NotificationsRounded />, badgeContent: '10', badgeColor: 'error' };
-
 export const Expanded: any = Default.bind({});
-Expanded.args = { icon: <GamepadRounded />, text: 'Dashboard', badgeContent: '10', badgeColor: 'error', expanded: true };
+Expanded.args = { icon: <NotificationsRounded />, text: 'Notifications', badgeContent: '10', badgeColor: 'error', expanded: true };

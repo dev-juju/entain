@@ -7,7 +7,7 @@
 
 //#region imports
 import { LanguageRounded } from '@mui/icons-material';
-import { Box, Menu, MenuItem } from '@mui/material';
+import { Box, Menu, MenuItem, TooltipProps } from '@mui/material';
 import { UIMachineActorContext } from 'Entain/app/state';
 import { ExpandableMenuButton } from 'Entain/components/expandable-menu-button';
 import { languageTranslation } from 'Entain/translations';
@@ -17,7 +17,7 @@ import { MouseEvent, useState } from 'react';
 
 export type LanguageMenuProps = {
   expanded?: boolean
-  placement?: TooltipPlacement,
+  placement?: TooltipProps['placement']
 };
 
 export const LanguageMenu = ({ expanded, placement='top' }: LanguageMenuProps) => {

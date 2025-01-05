@@ -19,11 +19,14 @@ const black: ThemeOptions = {
     success: { main: '#81c784' },
   },
   colors: {
-    tooltip: 'black',
     tooltipBackground: '#ffffff',
+    tooltipForeground: 'black',
     hoveredMenu: 'rgba(0, 0, 0, 0.1)',
     selectedMenu: 'rgba(0, 0, 0, 0.17) !important',
     selectedHoveredMenu: 'rgba(0, 0, 0, 0.24) !important',
+    navigationBackground: '#121212',
+    navigationForeground: 'white',
+    alpha: 'rgba(255, 255, 255, 0.06)',
   },
 };
 
@@ -41,11 +44,14 @@ const white: ThemeOptions = {
     error: { main: '#CB655F' },
   },
   colors: {
-    tooltip: '#ffffff',
     tooltipBackground: '#292F32',
+    tooltipForeground: '#ffffff',
     hoveredMenu: 'rgba(255, 255, 255, 0.1)',
     selectedMenu: 'rgba(255, 255, 255, 0.17) !important',
     selectedHoveredMenu: 'rgba(255, 255, 255, 0.24) !important',
+    navigationBackground: '#318FCE',
+    navigationForeground: 'white',
+    alpha: 'rgba(190, 190, 190, .125)',
   },
 };
 
