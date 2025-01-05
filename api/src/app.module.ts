@@ -12,8 +12,8 @@ import { AppController } from 'Entain/app.controller';
 import { AppService } from 'Entain/app.service';
 import { EntainError } from 'Entain/config/error';
 import { GlobalExceptionFilter } from 'Entain/config/error/global-exception.filter';
+import { MovieModule } from 'Entain/resources/movie/movie.module';
 //#endregion
-
 
 @Module({
   imports: [
@@ -28,6 +28,7 @@ import { GlobalExceptionFilter } from 'Entain/config/error/global-exception.filt
         },
       ],
     }),
+    MovieModule,
   ],
   controllers: [AppController],
   providers: [

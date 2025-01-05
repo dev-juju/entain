@@ -5,6 +5,7 @@
 
 //#region imports
 import { Global, HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { AxiosError } from 'axios';
 //#endregion
 
 export type ErrorResponse = {
@@ -36,6 +37,14 @@ export class EntainError {
   throw = ({ payload = EntainError.invalidContext, httpStatus = HttpStatus.BAD_REQUEST }: ThrowParams) => {
     throw new HttpException(payload, httpStatus);
   }
+
+    /**-------------------------------------------------------------------------------------------------------------------------
+   *                                                 handleFetchError
+   *--------------------------------------------------------------------------------------------------------------------------
+   *
+   * @param {AxiosError} error The error to handle
+   */
+   handleAxiosError = (error: AxiosError) => this.throw({ payload: { cause: 'FETCH_ERROR', description: error.response.data as string }, httpStatus: error.response.status })
 }
 
 /**-------------------------------------------------------------------------------------------------------------------------
