@@ -26,6 +26,7 @@ export class MovieController {
   @ApiInternalServerErrorResponse({ description: 'Internal server error' })
   @ApiOkResponse({ type: ListMoviesResponse })
   async list(@Query() listMoviesInput?: ListMoviesInput): Promise<ListMoviesResponse> {
+    console.log('listMoviesInput: ', listMoviesInput);
     return await this.moviesService.list(listMoviesInput);
   }
 
@@ -34,6 +35,7 @@ export class MovieController {
   @ApiInternalServerErrorResponse({ description: 'Internal server error' })
   @ApiOkResponse({ type: SearchMoviesResponse })
   async search(@Query() searchMoviesInput?: SearchMoviesInput): Promise<SearchMoviesResponse> {
+    console.log('searchMoviesInput: ', searchMoviesInput);
     return await this.moviesService.search(searchMoviesInput);
   }
 

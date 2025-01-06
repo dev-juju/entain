@@ -17,7 +17,7 @@ export class EntainDatabase {
     if (input.region) url += `&region=${ input.region }`;
     if (input.language) url += `&language=${ input.language }`;
 
-    const response = await fetch(url, { method: 'GET', headers: EntainDatabase.headers });
+    const response = await fetch(url, { method: 'GET', headers: EntainDatabase.headers, cache: 'force-cache' });
     if (!response.ok) throw new Error('Invalid response');
 
     const data = await response.json();
@@ -34,7 +34,7 @@ export class EntainDatabase {
     if (input.year) url += `&year=${ input.year }`;
     if (input.primary_release_year) url += `&primary_release_year=${ input.primary_release_year }`;
 
-    const response = await fetch(url, { method: 'GET', headers: EntainDatabase.headers });
+    const response = await fetch(url, { method: 'GET', headers: EntainDatabase.headers, cache: 'force-cache' });
     if (!response.ok) throw new Error('Invalid response');
 
     const data = await response.json();

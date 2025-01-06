@@ -101,11 +101,6 @@ pnpm storybook
 pnpm build:storybook
 ```
 
-### Cypress
-[Cypress](https://www.cypress.io/) is an open-source frontend testing tool for web applications, that excels at both component and end-to-end testing. It is easy to configure and use, feature-rich and has a solid community.
-With Cypress we allow developers to take responsibility of testing the components they create/modify while allowing QAs to focus on the bigger picture (regression, stress/load, end-to-end, integrations etc).
-This significantly improves test coverage over time and guarantees an overall more stable application. See the [Test]{#Test} section above for more information.
-
 ### XState
 [XState](https://stately.ai/docs/xstate-introduction) is a state management library for React that allows to manage state in a declarative way.
 It is a powerful tool that allows to create complex `state machines` and to test them in isolation. While it might be overkill for simple state management, I find the safety and structure it provides to be invaluable. The state diagrams are also a great way to visualize the state transitions throughout the application lifecycle.
