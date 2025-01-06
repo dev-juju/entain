@@ -3,10 +3,6 @@
  * @category Style
  */
 
-// #region imports
-import { filterContainerLeftMargin,filterContainerWidth } from 'Entain/app/movies/filter/style';
-// #endregion
-
 export const style = {
   container: {
     width: 1,
@@ -17,6 +13,5 @@ export const style = {
     alignItems: 'flex-start',
     flexWrap: 'wrap',
     gap: 2,
-    pl: `${ filterContainerWidth + filterContainerLeftMargin }px`,
   } as const,
 };

@@ -7,20 +7,36 @@
 import { navigationBarSize } from "Entain/components/navigation/style";
 //#endregion
 
-export const filterContainerWidth = 280;
+export const filterContainerWidth = 240;
 export const filterContainerLeftMargin = 20;
 
 export const style = {
   container: {
     display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'flex-start',
+    flexDirection: {
+      xs: 'row',
+      md: 'column',
+    },
+    justifyContent: {
+      xs: 'center',
+      md: 'flex-start',
+    },
     alignItems: 'center',
     zIndex: 2,
-    width: filterContainerWidth,
+    width: {
+      xs: 'unset',
+      md: filterContainerWidth,
+    },
     position: 'fixed',
-    top: navigationBarSize + 24,
+    top: {
+      xs: 8,
+      md: navigationBarSize + 24,
+    },
     left: filterContainerLeftMargin,
+    right: {
+      xs: filterContainerLeftMargin,
+      md: 'auto',
+    },
   } as const,
   paper: {
     display: 'flex',
@@ -28,8 +44,13 @@ export const style = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     width: 1,
+    maxWidth: 700,
     padding: 2,
-    my: 1
+    my: 1,
+    mx: {
+      xs: 1,
+      md: 0,
+    },
   } as const,
   categoryBox: {
     display: 'flex',
@@ -37,13 +58,10 @@ export const style = {
     alignItems: 'center',
     flexWrap: 'wrap',
     width: 1,
-    mt: 2,
     gap: 1,
   } as const,
   textField: {
     width: 1,
-    maxWidth: 300,
-    mt: 2,
     '& .MuiOutlinedInput-input': {
       fontSize: 12,
       py: 1,
@@ -65,6 +83,17 @@ export const style = {
     fontWeight: 'bold',
     textTransform: 'uppercase',
     fontSize: 12,
-    mb: 0.5
+    mb: 0.5,
+    display: {
+      xs: 'none',
+      md: 'block',
+    },
   },
+  divider: {
+    mb: 2,
+    display: {
+      xs: 'none',
+      md: 'unset',
+    },
+  }
 };

@@ -53,7 +53,7 @@ export const Filter = () => {
     <Box sx={ style.container }>
       <Paper sx={ style.paper }>
         <Typography variant='body2' sx={ style.title }>{ filterByNameTranslation[language] }</Typography>
-        <Divider flexItem />
+        <Divider sx={ style.divider } flexItem />
         <TextField placeholder={ searchTranslation[language] } type='text' variant='outlined' size='small' sx={ style.textField }
           value={ searchString } onChange={ handleSearchChange }
           slotProps={ {
@@ -77,9 +77,9 @@ export const Filter = () => {
           } }
         />
       </Paper>
-      <Paper sx={ style.paper }>
+      <Paper sx={ { ...style.paper, display: { xs: 'none', md: 'flex' } } }>
         <Typography variant='body2' sx={ style.title }>{ filterByCategoryTranslation[language] }</Typography>
-        <Divider flexItem />
+        <Divider sx={ style.divider } flexItem />
         <Box sx={ style.categoryBox }>
           {
             movieListCategories.map(c => <Chip key={ c } label={ getCategoryName(c) } onClick={ handleCategoryClick(c) } color={ c === category ? 'info' : 'default' } />)
