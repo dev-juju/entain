@@ -33,8 +33,8 @@ rm -rf "web/.next"
 
 # CREATE ENV FILES
 echo "Creating env files..."
-cp $API_EXAMPLE_ENV_FILE "api/.env"
-cp $WEB_EXAMPLE_ENV_FILE "web/.env"
+cp $API_EXAMPLE_ENV_FILE "api/.env.development"
+cp $WEB_EXAMPLE_ENV_FILE "web/.env.development"
 
 # SETUP PACKAGE MANAGERS
 echo "Setting up package managers..."

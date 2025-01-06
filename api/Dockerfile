@@ -24,5 +24,5 @@ FROM node:22.12.0-alpine AS entain_api_production
 COPY --chown=node:node --from=entain_api_build /usr/src/app/node_modules ./node_modules
 COPY --chown=node:node --from=entain_api_build /usr/src/app/dist ./dist
 
-EXPOSE 3000
+EXPOSE 3002
 CMD [ "node", "dist/main.js" ]

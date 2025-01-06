@@ -1,17 +1,18 @@
 services:
-  web:
-    container_name: entain-web__app__development
+  api:
+    container_name: entain-api__app__production
     image: node:22.12.0-alpine
     restart: unless-stopped
     working_dir: /usr/app/
     volumes:
       - .:/usr/app/
     ports:
-      - '${WEB_EXPOSED_PORT:-3003}:3000'
+      - '3000:3000'
     command: >
       sh -c 'corepack enable
       && corepack prepare pnpm@9.15.2 --activate
       && pnpm i
-      && pnpm dev'
+      && pnpm build
+      && pnpm start:prod'
     env_file:
-      - .env.development
+      - .env

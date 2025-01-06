@@ -72,13 +72,13 @@ make down
 ### Access Points
 Once all modules are up and running, you can access them locally via following endpoints
 
-  - [http://localhost:3002/rest](http://localhost:3002/rest) - **API REST** - This opens a `Swagger UI` on browser. A postman collection is also included in the repository for more flexible testing.
+  - [http://localhost:3002/rest](http://localhost:3002/rest) - **REST API** - This opens a `Swagger UI` on browser. A postman collection is also included in the repository for more flexible testing.
   - [http://localhost:3003](http://localhost:3003) - **Web App**
 
 You can access the live apps via following endpoints
 
-  - [API](http://entain-api-alb-766487181.us-east-2.elb.amazonaws.com) - `Swagger UI` is NOT available. You can use Postman to fetch data from the API.
-  - [http://localhost:3003](http://localhost:3003) - **Web App**
+  - [API](http://3.249.135.151:3000) - **Deployed On AWS** - `Swagger UI` is NOT available. You can use Postman to fetch data from the API.
+  - [Web](http://ec2-3-249-135-151.eu-west-1.compute.amazonaws.com/) - **Deployed On AWS**
 
 ## Notes
 See the `README.md` file of respective modules for module-specific information
