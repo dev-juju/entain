@@ -25,7 +25,6 @@ export const NavigationButton = ({ route, listItemSx={}, showOnlyIconsOnSmallScr
   const widthControl = showOnlyIconsOnSmallScreens ? style.flexible : {};
   const toolbarStyle = { ...style.toolbar, ...widthControl, ...listItemSx, ...(isActiveMenu ? style.activeMenu : {}) };
   const routeBoxStyle = { ...style.routeBox, ...(isActiveMenu ? style.activeRouteBox : {}) };
-  const routeNameStyle = { ...style.routeName, ...(isActiveMenu ? style.activeRouteName : {}) };
 
   const getListItem = (route: NavigationMenuItem) => (
     <Box component='li' sx={ toolbarStyle }>
@@ -35,7 +34,7 @@ export const NavigationButton = ({ route, listItemSx={}, showOnlyIconsOnSmallScr
           (isSmallScreen && showOnlyIconsOnSmallScreens) || !route.name ?
             <></>
             :
-            <Typography sx={ { ...routeNameStyle, pl: route.icon ? 1 : 0 } } variant='body2'>{ route.name }</Typography>
+            <Typography sx={ { pl: route.icon ? 1 : 0 } } variant='body2'>{ route.name }</Typography>
         }
       </Box>
     </Box>
@@ -44,7 +43,7 @@ export const NavigationButton = ({ route, listItemSx={}, showOnlyIconsOnSmallScr
   return (
     <Link key={ route.link.url } href={ route.link.url } as={ route.link.as } passHref data-testid={ route.dataCy }>
       {
-        isSmallScreen ?
+        isSmallScreen || route.name ?
           getListItem(route)
           :
           <Tooltip title={ route.name } placement='top' sx={ style.tooltip }>{ getListItem(route) }</Tooltip>

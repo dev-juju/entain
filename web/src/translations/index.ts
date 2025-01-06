@@ -16,5 +16,14 @@ export const noTimeInfoTranslation: Translation = {
   russian: 'Я не могу найти время для дизайна хорошей лэндинг-страницы. Это домашняя страница предназначена только для демонстрации навигации.'
 };
 export const enjoyTranslation: Translation = { english: 'Enjoy', estonian: 'Naudige', russian: 'Наслаждайтесь' };
-
 export const goToMoviesTranslation: Translation = { english: 'Go to movies', estonian: 'Minge filmid', russian: 'Перейти к фильмам' };
+
+export const filtersTranslation: Translation = { english: 'Filters', estonian: 'Filtreeri', russian: 'Фильтры' };
+export const filterByNameTranslation: Translation = { english: 'Filter by name', estonian: 'Filtreeri nime järgi', russian: 'Фильтр по названию' };
+export const filterByCategoryTranslation: Translation = { english: 'Filter by category', estonian: 'Filtreeri kategoorias', russian: 'Фильтр по категории' };
+export const searchTranslation: Translation = { english: 'Search', estonian: 'Otsi', russian: 'Поиск' };
+
+export const nowPlayingTranslation: Translation = { english: 'Now Playing', estonian: 'Täna tähistatakse', russian: 'Сегодня в прокате' };
+export const popularTranslation: Translation = { english: 'Popular', estonian: 'Populaarne', russian: 'Популярное' };
+export const topRatedTranslation: Translation = { english: 'Top Rated', estonian: 'Hinne 10', russian: 'Лучшие' };
+export const upcomingTranslation: Translation = { english: 'Upcoming', estonian: 'Tulevane', russian: 'Скоро в прокате' };

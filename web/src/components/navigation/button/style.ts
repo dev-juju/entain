@@ -5,6 +5,7 @@
 
 //#region imports
 import { Theme } from '@mui/material';
+import { blue } from '@mui/material/colors';
 //#endregion
 
 export const style: any = {
@@ -12,6 +13,14 @@ export const style: any = {
     backgroundColor: (theme: Theme) => theme.colors?.selectedMenu,
     '&:hover': {
       backgroundColor: (theme: Theme) => theme.colors?.selectedHoveredMenu
+    },
+  },
+  activeRouteBox: {
+    '& .MuiSvgIcon-root': {
+      color: (theme: Theme) => theme.palette.mode === 'light' ? theme.palette.primary.main : blue[500]
+    },
+    '& .MuiTypography-root': {
+      color: (theme: Theme) => theme.palette.mode === 'light' ? theme.palette.primary.main : blue[500]
     },
   },
   toolbar: {
@@ -51,11 +60,11 @@ export const style: any = {
     '& .MuiSvgIcon-root': {
       color: 'white',
     },
-  },
-  routeName: {
-    fontSize: 12,
-    whiteSpace: 'nowrap',
-    color: 'white',
+    '& .MuiTypography-root': {
+      fontSize: 12,
+      whiteSpace: 'nowrap',
+      color: 'white',
+    },
   },
   iconBox: {
     display: 'flex',

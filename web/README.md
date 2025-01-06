@@ -135,6 +135,7 @@ Some of the structures and recommendations below are based on this goal.
     - `@types` contains all global types. **Types that are only used by one component should generally not be placed here, but should be defined in the component**. All types should be exported to make them available to [TypeDoc](#Documentation).
     - `app` contains all routes (pages). See [NEXT.js](#NEXT.js) section for more on page routing.
     - `components` contains all re-usable components.
+    - `database` contains all data fetching related code. The methods here should ideally only be used by state machines. Components should be as dumb as possible and rely strictly on the state machines for data.
     - `theme` contains theming configurations, variants, theme provider, UI theme picker etc. Themes are defined using [Material UI](#MUI).
     - `translations` contains translation configurations, supported languages, UI language picker etc. **Actual translation files should be co-located with the corresponding component.**
     - `util` contains shared utility functions, hooks and global constants. Functions and hooks are defined in separate files (when possible) and as close to the consuming component(s) as possible. Only those that a truly global (or do not belong to any specific component/page) are placed here.

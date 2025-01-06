@@ -26,24 +26,24 @@ export const ThemeMenu = ({ expanded, placement='top', onSelect=dummy }: ThemeMe
   const actorRef = UIMachineActorContext.useActorRef();
   const { theme, language } = UIMachineActorContext.useSelector(store => store.context);
 
-  const [anchor, seAnchor] = useState<HTMLElement | null>(null);
+  const [anchor, setAnchor] = useState<HTMLElement | null>(null);
 
-  const themeChanged = (theme: keyof typeof themeVariants) => () => {
+  const handleMenuItemClick = (theme: keyof typeof themeVariants) => () => {
     handleClose();
     actorRef.send({ type: 'Set theme', payload: theme });
     onSelect();
   }
-  const showList = (event: MouseEvent<HTMLElement>) => seAnchor(event.currentTarget);
-  const handleClose = () => seAnchor(null);
+  const handleMenuClick = (event: MouseEvent<HTMLElement>) => setAnchor(event.currentTarget);
+  const handleClose = () => setAnchor(null);
 
   return (
     <>
       <ExpandableMenuButton text={ theme } expanded={ expanded } icon={ <WbSunnyRounded /> }
-        placement={ placement } tooltip={ themeTranslation[language] } onClick={ showList } />
+        placement={ placement } tooltip={ themeTranslation[language] } onClick={ handleMenuClick } />
       <Menu anchorEl={ anchor } keepMounted open={ Boolean(anchor) } onClose={ handleClose } data-testid='menu-theme'>
         {
           Object.keys(themeVariants).map(item =>
-            <MenuItem key={ item } value={ item } selected={ item == theme } onClick={ themeChanged(item as any) }
+            <MenuItem key={ item } value={ item } selected={ item == theme } onClick={ handleMenuItemClick(item as any) }
               data-testid={ `menu-item-theme-${ item.trim().toLowerCase().replaceAll(' ', '-') }` }>
               { item }
             </MenuItem>

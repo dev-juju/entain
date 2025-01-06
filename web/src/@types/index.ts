@@ -17,6 +17,8 @@ import { ReactNode } from 'react';
  * Types used by multiple components are defined here to avoid multiple imports
 */
 
+const movieListCategories = ['now_playing', 'popular', 'top_rated', 'upcoming'] as const;
+
 declare global {
   type ThemeKey = keyof typeof themeVariants;
 
@@ -43,7 +45,7 @@ declare global {
     backdrop_path: string
   }
 
-  type MovieListCategory = 'now_playing' | 'popular' | 'top_rated' | 'upcoming';
+  type MovieListCategory = (typeof movieListCategories)[number];
 
   type ListMoviesInput = {
     category: MovieListCategory
@@ -92,4 +94,4 @@ declare global {
   }
 }
 
-export { };
+export { movieListCategories };

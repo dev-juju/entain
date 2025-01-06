@@ -21,27 +21,26 @@ export type LanguageMenuProps = {
 };
 
 export const LanguageMenu = ({ expanded, placement='top' }: LanguageMenuProps) => {
-  const actorRef = UIMachineActorContext.useActorRef();
+  const uiActorRef = UIMachineActorContext.useActorRef();
   const language = UIMachineActorContext.useSelector(store => store.context.language);
 
-  const [languageAnchor, setLanguageAnchor] = useState<HTMLElement | null>(null);
+  const [anchor, setAnchor] = useState<HTMLElement | null>(null);
 
-  const languageChanged = (language: SupportedLanguageEnum) => {
-    handleCloseLanguage();
-    actorRef.send({ type: 'Set language', payload: language });
+  const handleMenuItemClick = (language: SupportedLanguageEnum) => () => {
+    handleClose();
+    uiActorRef.send({ type: 'Set language', payload: language });
   }
-  const showLanguageList = (event: MouseEvent<HTMLElement>) => setLanguageAnchor(event.currentTarget);
-  const handleCloseLanguage = () => setLanguageAnchor(null);
+  const handleMenuClick = (event: MouseEvent<HTMLElement>) => setAnchor(event.currentTarget);
+  const handleClose = () => setAnchor(null);
 
   return (
     <>
       <ExpandableMenuButton text={ language } expanded={ expanded } icon={ <LanguageRounded /> }
-        placement={ placement } tooltip={ languageTranslation[language] } onClick={ showLanguageList } />
-      <Menu anchorEl={ languageAnchor } keepMounted open={ Boolean(languageAnchor) }
-        onClose={ handleCloseLanguage } data-testid='menu-translation'>
+        placement={ placement } tooltip={ languageTranslation[language] } onClick={ handleMenuClick } />
+      <Menu anchorEl={ anchor } keepMounted open={ Boolean(anchor) } onClose={ handleClose } data-testid='menu-translation'>
         {
           Object.values(SupportedLanguageEnum).map(item =>
-            <MenuItem key={ item } value={ item } selected={ item == language } onClick={ () => languageChanged(item) }
+            <MenuItem key={ item } value={ item } selected={ item == language } onClick={ handleMenuItemClick(item) }
               sx={ { fontSize: 12 } } data-testid={ `menu-item-translation-${ item.trim().toLowerCase().replaceAll(' ', '-') }` }>
               <Box sx={ { mr: 1 } }>{ getLanguageLogo(item) }</Box>
               { getLanguageName(item) }

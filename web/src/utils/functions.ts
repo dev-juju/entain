@@ -1,5 +1,5 @@
 /**
- * A collection of helper functions
+ * A collection of utility functions
  *
  * @packageDocumentation
  * @category Util
