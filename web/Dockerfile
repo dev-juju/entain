@@ -24,7 +24,7 @@ WORKDIR /app
 
 COPY --from=entain_web_build /app/package.json .
 COPY --from=entain_web_build /app/pnpm-lock.yaml .
-COPY --from=entain_web_build /app/next.config.js .
+COPY --from=entain_web_build /app/next.config.ts .
 COPY --from=entain_web_build /app/.next/standalone ./
 COPY --from=entain_web_build /app/public ./public
 COPY --from=entain_web_build /app/.next/static ./.next/static
