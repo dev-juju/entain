@@ -26,9 +26,7 @@ export const Filter = () => {
   const debouncedSearchString = useDebounce(searchString, 1000);
 
   useEffect(
-    () => {
-      moviesActorRef.send({ type: 'Set query', payload: debouncedSearchString.trim() });
-    },
+    () => { moviesActorRef.send({ type: 'Set query', payload: debouncedSearchString.trim() }); },
     [debouncedSearchString, moviesActorRef]
   );
 

@@ -45,6 +45,7 @@ const moviesMachine = setup({
     }}),
     resetData: assign({ data: null, page: 1 }),
     unsetQuery: assign({ query: '' }),
+    unsetSearchString: assign({ searchString: '' }),
     unsetCategory: assign({ category: null }),
     resetCategory: assign({ category: 'now_playing' }),
     setPage: assign({ page: (_, params: number) => params }),
@@ -62,6 +63,7 @@ const moviesMachine = setup({
   }
 })
 .createMachine({
+  /** @xstate-layout N4IgpgJg5mDOIC5QFkD2A3AlnAxAZTABcACAYwENCwpUAnATwG0AGAXUVAAdVZNDNUAOw4gAHogC0ARgCsAdgB0UgEwAWGQDYAzFoCcuqcwAcRgDQh6iKRpkK561TtX6tc13IC+H82iy4CJACOAK5gDCzsSCDcvPxCIuIIMgYKMsbKUkY2csyqcnLmlghSckYKunJS+qrKRjLJzCVePhjYsPhExCFhTFKRXDx8AsJRiYa6CjUydXLT+bOqZhZWNnYOTi5uRs0gvm0dJLBg5LSkABbEsIS0mIJQESIxQ-GjiHlluvIaJVpGBlJaZSFSRaDQKLQyVSqYyzXKOb47PZwBQAGUwVwUADEiOdblAcBAhGAFLd0KgANbEpGwVHowhYnFnPEIUmoChxQQRB5RJ4chJWXRguQadRGWpVYxVArLBClZiTLSLX66ZzKZjKXSI1rItEY7GEXF3HBhWh0BScAA2lAAZnQALYKam0vWM5ms9nDLlsR6DPmvBASGRaBTKVy6ExB3RqIyg4GysUhuoaKMqyE6LRavw03X0gAqDGIAEEoORbjhRFdKMTyNaqLQABSGZjNgCUOCdOYU+foRZLt25A1iw35AakqjBumY4Z0jTk+l0ELjRhydgqUibyaMSszbWd9IAkhALWADsROOQYAPor7h-7rKo7CLIcmx+k8nGZGqFDZVFUjNZl2XZQdx1OkFEPY9TytO5ggvMAr15W9QDGZxwWmQENWXYU5y0OMNG0b9xy3WdVVqECaQIE5zgZA0mSNQlBGJVlKUdbUKOOU4zhow0oBZQQyQ9IQvX6a8hxeZDEEFZQlGYPQNDnAEKgXON8ikcpmEhDTIRyexyIUSjOO4uj8RNM1LRte1WKzfSOOo-UeL4gTKE9NgEJvcSxEQZNbA0ZR8KMKcsg0ZsNBUuolC0Kp8PTDVZL0gzqO7XtS0EctKyoBQazrRtm1bds2JsqiuKS4sUrcsSRgkhBvlsORlEheqtOXAElw0Mo1TSbRoShFVtm8XYCoSriIJPAIzzg8rnkqzyEBVNSAsqFQcmXYxVDw74FA0pUtFyHTFni2zhqPUbOmgqBYMvb0eXc6bEijMFoVWqMoRMGMP1DENx0yeplFKMUZC8frBFQCA4BEakfQqkcJDUaTJ2nHaSnnRcZVKT7IWcQxIsqPqWmsnNIam6GqgfeGY0RucXBkONHGDWRf3sUM0jnTx+o7MD7OMwm-SqwM1Kk6dmF8tQJTWmVklJvISlmQw6kcPTOxKvtpsQjzEgkQFJl-QxGo6qMpDjeHwQMHIg2SQw6oVsCRu5pCZpqCYRXFdJ6nqXCZTasFXEVMd3ChdQDqK221cQTRFDqhq0nqZr3aKRxavHNQhZfLJA8Mzm8WD26vMFENfMMbRAMVXQ8JUSZZHkmRMgyZspDTxKC1K24s5HOqyhUfDPcWZnY8koXV0FUpE861R66O48W7vNV5T+cdcjkrJe+qmM7H-UFVLVAxgMBoA */
   id: 'Movies',
   initial: 'List',
   context: {
@@ -188,7 +190,7 @@ const moviesMachine = setup({
         params: ({ context: { category }, event: { payload }}) => ({ newValue: payload, oldValue: category })
       },
       actions: [
-        'resetData', 'unsetQuery',
+        'resetData', 'unsetQuery', 'unsetSearchString',
         { type: 'setCategory', params: ({ event: { payload }}) => payload },
       ],
       target: '#Movies.List.Fetching',
@@ -210,7 +212,7 @@ const moviesMachine = setup({
           type: 'queryHasChangedAndIsEmpty',
           params: ({ context: { query }, event: { payload }}) => ({ newValue: payload, oldValue: query })
         },
-        actions: ['resetData', 'resetCategory', 'unsetQuery'],
+        actions: ['resetData', 'resetCategory', 'unsetQuery', 'unsetSearchString'],
         target: '#Movies.List.Fetching',
       }
     ],
