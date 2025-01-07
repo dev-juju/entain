@@ -8,7 +8,7 @@ import { Card, CardContent, CardMedia, Tooltip, Typography } from '@mui/material
 import { style } from 'Entain/app/movies/table/card/style';
 //#endregion
 
-const tmdbImageBaseUrl = 'https://image.tmdb.org/t/p/original';
+export const tmdbImageBaseUrl = 'https://image.tmdb.org/t/p/original';
 
 export type MovieCardProps = {
   movie: Movie
@@ -16,8 +16,9 @@ export type MovieCardProps = {
 }
 export const MovieCard = ({ movie, ref }: MovieCardProps) => {
   return (
-    <Card ref={ ref } sx={ style.card }>
-      <CardMedia component='img' image={ tmdbImageBaseUrl + movie.poster_path } alt={ movie.title } sx={ style.cardMedia } />
+    <Card ref={ ref } sx={ style.card } data-testid={ `movie-card-${ movie.id }` }>
+      <CardMedia component='img' image={ tmdbImageBaseUrl + movie.poster_path } alt={ movie.title }
+        sx={ style.cardMedia } data-testid={ `movie-card-image-${ movie.id }` } />
       <CardContent>
         <Tooltip title={ movie.title } placement='top'>
           <Typography variant='subtitle1' sx={ style.title } noWrap>{ movie.title }</Typography>

@@ -72,8 +72,8 @@ make down
 ### Access Points
 Once all modules are up and running, you can access them locally via following endpoints
 
-  - [http://localhost:3002/rest](http://localhost:3002/rest) - **REST API** - This opens a `Swagger UI` on browser. A postman collection is also included in the repository for more flexible testing.
-  - [http://localhost:3003](http://localhost:3003) - **Web App**
+  - [API](http://localhost:3002/rest) - This opens a `Swagger UI` on browser. A postman collection is also included in the repository for more flexible testing.
+  - [Web](http://localhost:3003)
 
 You can access the live apps via following endpoints
 
