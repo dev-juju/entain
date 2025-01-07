@@ -27,3 +27,5 @@ export const nowPlayingTranslation: Translation = { english: 'Now Playing', esto
 export const popularTranslation: Translation = { english: 'Popular', estonian: 'Populaarne', russian: 'Популярное' };
 export const topRatedTranslation: Translation = { english: 'Top Rated', estonian: 'Hinne 10', russian: 'Лучшие' };
 export const upcomingTranslation: Translation = { english: 'Upcoming', estonian: 'Tulevane', russian: 'Скоро в прокате' };
+
+export const rotateTranslation: Translation = { english: 'Rotate', estonian: 'Pööra', russian: 'Повернуть' };

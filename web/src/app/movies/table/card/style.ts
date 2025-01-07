@@ -14,7 +14,8 @@ export const style = {
       sm: 340,
       md: 280,
       lg: 182
-    }
+    },
+    position: 'relative'
   },
   cardMedia: {
     height: 273,
@@ -25,4 +26,16 @@ export const style = {
   releaseDate: {
     fontSize: '12px',
   },
+  iconButton: {
+    position: 'absolute',
+    bottom: 5,
+    right: 5
+  },
+  divider: {
+    my: 1
+  },
+  overviewBox: {
+    maxHeight: 220,
+    overflowY: 'auto'
+  }
 };
