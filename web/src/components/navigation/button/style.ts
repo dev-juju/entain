@@ -17,10 +17,10 @@ export const style: any = {
   },
   activeRouteBox: {
     '& .MuiSvgIcon-root': {
-      color: (theme: Theme) => theme.palette.mode === 'light' ? theme.palette.primary.main : blue[500]
+      color: (theme: Theme) => theme.palette.mode === 'light' ? 'white' : blue[500]
     },
     '& .MuiTypography-root': {
-      color: (theme: Theme) => theme.palette.mode === 'light' ? theme.palette.primary.main : blue[500]
+      color: (theme: Theme) => theme.palette.mode === 'light' ? 'white' : blue[500]
     },
   },
   toolbar: {
