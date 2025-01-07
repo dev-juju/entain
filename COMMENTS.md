@@ -19,7 +19,9 @@ Aside from the requirements of this exercise, here are some of the things I've d
 - I used [Next.js](https://nextjs.org/) on the frontend. I assume that the `React` requirement is also met by using the `Next.js` framework.
 
 ## TIPS
-As mentioned in this [README](web/README.md), I use `xstate` to manage the state of the `Web` application. One of the benefits of `xstate` is the ability to visualize the state machine and manually trigger events and see the state changes. You will need to install the official [XState VSCode](https://marketplace.cursorapi.com/items?itemName=statelyai.stately-vscode) extension to take advantage of this feature. Below is an example of how to visualize the `Movies` state machine.
+As mentioned in this [README](web/README.md), I use `xstate` to manage the state of the `Web` application.
+One of the benefits of `xstate` is the ability to visualize the state machine and manually trigger events and see the state changes.
+You will need to install the official [XState VSCode](https://marketplace.cursorapi.com/items?itemName=statelyai.stately-vscode) extension to take advantage of this feature. Below is an example of how to visualize the `Movies` state machine.
 
 ![Movies State Machine](./web/public/movies-state.png)
 
@@ -37,7 +39,9 @@ See more notes in the following `README.md` files
 - [API](api/README.md)
 
 ## What's Missing?
-I was told that I have 2 weeks to complete this exercise. That means I have another week and a half to work on this if I felt like it was necessary. I understand this, but I think what I done so far suffices to help you make an informed decision on my skills and style. That said, what would I do if I worked on this for another week and a half? Well aside from adding more UI features like additional filters, sorting, details view for movies etc. I would also:
+I was told that I have 2 weeks to complete this exercise. That means I have another week and a half to work on this if I felt like it was necessary.
+I understand this, but I think what I done so far suffices to help you make an informed decision on my skills and style.
+That said, what would I do if I worked on this for another week and a half? Well aside from adding more UI features like additional filters, sorting, details view for movies etc. I would also:
 
 - Setup E2E testing with something like [Cypress](https://www.cypress.io/) or [Playwright](https://playwright.dev/)
 - Setup CI/CD pipelines with [Github Actions](https://github.com/features/actions) or [AWS CodePipeline](https://aws.amazon.com/codepipeline/)
