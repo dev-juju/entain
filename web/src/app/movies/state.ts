@@ -28,7 +28,7 @@ type MoviesEvents =
   | { type: 'Set query'; payload: string }
   | { type: 'Set search string'; payload: string };
 
-const moviesMachine = setup({
+export const moviesMachine = setup({
   types: {
     events: {} as MoviesEvents,
     context: {} as MoviesContext

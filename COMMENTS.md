@@ -7,6 +7,8 @@ As mentioned in this [README](web/README.md), I use `xstate` to manage the state
 
 ![Movies State Machine](./web/public/movies-state.png)
 
+You can also see unit tests for the `Movies` state machine in the [state.test.ts](web/src/app/movies/state.test.ts) file. The tests are far from exhaustive, but you get the idea.
+
 ## NOTES
 In addition to using `Nextjs` on the frontend, I also used [Nest.js](https://nestjs.com/) on the backend and prefer [Docker](https://www.docker.com/). For these reasons, deploying all modules on AWS seemed like the best option as opposed to deploying the Web module on GitHub Pages.
 
