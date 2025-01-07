@@ -7,14 +7,15 @@ Aside from the requirements of this exercise, here are some of the things I've d
 - `Testing`: the app is configured for unit testing using `jest` both on `frontend` and `backend`.
 - `Caching`: basic query caching is handled by `Nextjs`'s [fetch augmentation](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching). I didn't implement any caching for the `API` as I don't think it's necessary for this exercise.
 - `Storybook`: the `Web` module is configured for [Storybook](https://storybook.js.org/) development. See the [README](web/README.md) for more information.
-- `Error handling`: on the `Web` global error handling routes and fallback components have been configured, and error boundaries are set using `react-error-boundary`. On the API, global exception filters have been set up to handle errors and return appropriate and consistent responses.
+- `Error handling`: on the `Web` I setup global error handling routes, fallback components, and error boundaries using `react-error-boundary`. On the `API`, I setup global exception filters to handle errors and return appropriate and consistent responses.
 - `Rate limiting`: Basic rate limiting is setup with `Nestjs`'s [throttler module](https://docs.nestjs.com/techniques/throttling).
 - `Makefile`: a [Makefile](Makefile) is included with commands to help with development and deployment.
 - `Docker`: all modules are containerized using `Docker`. Commands for building the images are available in the [Makefile](Makefile). Docker compose is also configured to run the containers.
 - `Deployment`: all modules are deployed on `AWS`. More on this later.
+- `Documentation`: I added code documentation to all modules using `TypeDoc`. On the `API`, `Swagger` is also configured.
 
 ## ASSUMPTIONS
-- I quickly skimmed the TMDB API documentation, so I may have missed some details. My implementation is based on the assumption that there are two separate endpoints for listing and searching movies.
+- I quickly skimmed the [TMDB API documentation](https://developer.themoviedb.org/reference/intro/getting-started), so I may have missed some details. My implementation is based on the assumption that there are two separate endpoints for listing and searching movies.
 - I used [Next.js](https://nextjs.org/) on the frontend. I assume that the `React` requirement is also met by using the `Next.js` framework.
 
 ## TIPS
